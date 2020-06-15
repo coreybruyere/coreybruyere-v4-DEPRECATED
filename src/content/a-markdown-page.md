@@ -1,6 +1,6 @@
 ---
-layout: page
-title: 'Example Markdown page'
+layout: post
+title: 'Example post page'
 ---
 
 Now we're writing in Markdown! Pretty nice, huh?
