@@ -1,6 +1,7 @@
 ---
-layout: page
-title: 'Example post page'
+slug: '/blog/my-first-post'
+date: '2019-05-04'
+title: 'My first blog post'
 ---
 
 Now we're writing in Markdown! Pretty nice, huh?
