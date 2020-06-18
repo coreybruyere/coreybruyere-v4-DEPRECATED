@@ -3,9 +3,10 @@ import { Link, graphql } from 'gatsby'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
+import PostLink from '../components/PostLink'
 import IndexLayout from '../layouts'
 
-interface Props {
+interface IndexPageProps {
   data: {
     allMarkdownRemark: any
   }
@@ -15,10 +16,12 @@ const IndexPage = ({
   data: {
     allMarkdownRemark: { edges }
   }
-}: any) => {
+}: IndexPageProps) => {
   const Posts = edges
     .filter((edge: any) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map((edge: any) => <Link to={edge.node.frontmatter.path} key={edge.node.id} />)
+    .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
+
+  console.log(Array.isArray(edges.filter((edge: any) => edge.node.frontmatter.date)))
   return (
     <IndexLayout>
       <Page>
@@ -28,7 +31,7 @@ const IndexPage = ({
           <p>Now go build something great.</p>
           <Link to="/page-2/">Go to page 2</Link>
 
-          <Posts />
+          {Posts}
         </Container>
       </Page>
     </IndexLayout>
@@ -46,7 +49,7 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            path
+            slug
             title
           }
         }
