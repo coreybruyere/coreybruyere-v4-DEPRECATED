@@ -1,10 +1,11 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { Box } from 'theme-ui'
 
 import { widths } from '../styles/variables'
 import { getEmSize } from '../styles/mixins'
 
-const StyledContainer = styled.div`
+const StyledContainer = styled(Box)`
   position: relative;
   margin-left: auto;
   margin-right: auto;
