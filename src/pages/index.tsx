@@ -18,10 +18,13 @@ const IndexPage = ({
   }
 }: IndexPageProps) => {
   const Posts = edges
-    .filter((edge: any) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter((edge: any) => edge.node.frontmatter.type === 'post') // Filter down to markdown files with a type of `post`.
     .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
 
-  console.log(Array.isArray(edges.filter((edge: any) => edge.node.frontmatter.date)))
+  const Works = edges
+    .filter((edge: any) => edge.node.frontmatter.type === 'work') // Filter down to markdown files with a type of `work`.
+    .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
+
   return (
     <IndexLayout>
       <Page>
@@ -31,7 +34,11 @@ const IndexPage = ({
           <p>Now go build something great.</p>
           <Link to="/page-2/">Go to page 2</Link>
 
+          <h1>Blog posts</h1>
           {Posts}
+
+          <h1>Work items</h1>
+          {Works}
         </Container>
       </Page>
     </IndexLayout>
@@ -51,6 +58,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            type
           }
         }
       }
