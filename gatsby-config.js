@@ -3,8 +3,12 @@
 module.exports = {
   siteMetadata: {
     title: 'gatsby-starter-typescript-plus',
+    titleTemplate: '%s · The Real Hero',
     description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
+    url: 'https://www.coreybruyere.com', // No trailing slash allowed!
+    image: '/images/snape.jpg',
     keywords: 'gatsbyjs, gatsby, javascript, sample, something',
+    twitterUsername: '@coreybruyere',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
     author: {
       name: 'Resi Respati',
