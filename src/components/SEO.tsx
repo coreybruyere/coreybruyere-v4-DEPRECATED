@@ -3,12 +3,13 @@ import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
 
-interface SEOProps {
-  title: string | null
-  description: string | null
-  image: string | null
-  article: boolean
+export interface SEOProps {
+  title?: string | null
+  description?: string | null
+  image?: string | null
+  article?: boolean
 }
+
 const SEO: React.FC<SEOProps> = ({ title, description, image, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)

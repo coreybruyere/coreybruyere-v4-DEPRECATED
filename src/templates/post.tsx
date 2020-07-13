@@ -28,7 +28,7 @@ interface PostTemplateProps {
 }
 
 const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => (
-  <IndexLayout>
+  <IndexLayout title={data.markdownRemark.frontmatter.title} description={data.markdownRemark.excerpt}>
     <Page>
       <Container>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
