@@ -2,6 +2,7 @@
 slug: '/media/my-first-audiobook'
 date: '2019-05-04'
 title: 'My first audiobook'
+layout: 'post'
 type: 'media'
 format: 'audiobook'
 ---

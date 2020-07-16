@@ -32,6 +32,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => (
     <Page>
       <Container>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <h2>Post</h2>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>

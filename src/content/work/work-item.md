@@ -2,6 +2,7 @@
 slug: '/blog/my-work-post'
 date: '2019-05-04'
 title: 'A work post'
+layout: 'post'
 type: 'work'
 ---
 

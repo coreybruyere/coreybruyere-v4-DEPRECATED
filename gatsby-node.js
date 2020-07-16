@@ -22,10 +22,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       }
 
       // Used to generate URL to view this content.
+      // https://dev.to/alexalexyang/how-to-make-url-path-prefix-for-section-of-website-in-gatsby-3cb4
       createNodeField({
         node,
         name: 'slug',
-        value: slug || ''
+        value: `${slug}` || ''
       })
 
       // Used to determine a page layout.

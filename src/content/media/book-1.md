@@ -2,6 +2,7 @@
 slug: '/media/my-first-book'
 date: '2019-05-04'
 title: 'My first book'
+layout: 'post'
 type: 'media'
 format: 'book'
 ---
