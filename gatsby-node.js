@@ -12,13 +12,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout } = node.frontmatter
+      const { slug, layout, type } = node.frontmatter
       const { relativePath } = getNode(node.parent)
 
-      let slug = permalink
+      let permalink = slug
 
-      if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`
+      if (!permalink) {
+        permalink = `/${slug}/${relativePath.replace('.md', '')}/`
       }
 
       // Used to generate URL to view this content.
@@ -26,7 +26,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'slug',
-        value: `${slug}` || ''
+        value: `${permalink}` || ''
       })
 
       // Used to determine a page layout.
