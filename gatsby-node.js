@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       let permalink = slug
 
       if (!permalink) {
-        permalink = `/${slug}/${relativePath.replace('.md', '')}/`
+        permalink = `${relativePath.replace('.md', '')}/`
       }
 
       // Used to generate URL to view this content.
