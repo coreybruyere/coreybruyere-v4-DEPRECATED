@@ -1,8 +1,9 @@
 ---
-slug: '/post/my-first-post'
+slug: '/post/my-third-post'
 date: '2019-05-04'
-title: 'My first blog post'
+title: 'My THIRD blog post'
 layout: 'post'
+type: 'post'
 ---
 
 This is a POST! Now we're writing in Markdown! Pretty nice, huh?
