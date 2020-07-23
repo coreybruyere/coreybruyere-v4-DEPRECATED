@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import PostLink from '../components/PostLink'
+import Section from '../components/Section'
 import IndexLayout from '../layouts'
 
 interface IndexPageProps {
@@ -37,9 +38,12 @@ const IndexPage = ({
     <IndexLayout>
       <Page>
         <Container>
+          <Section heading={'Hi People'}>
+            <p>Welcome to your new Gatsby site.</p>
+            <p>Now go build something great.</p>
+          </Section>
           <h1>Hi people</h1>
-          <p>Welcome to your new Gatsby site.</p>
-          <p>Now go build something great.</p>
+
           <Link to="/page-2/">Go to page 2</Link>
 
           <h1>Blog posts</h1>

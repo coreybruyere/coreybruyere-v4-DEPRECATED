@@ -1,7 +1,7 @@
 ---
-slug: '/post/my-first-post'
+slug: '/post/hello'
 date: '2019-05-04'
-title: 'My first blog post'
+title: 'HELLO'
 layout: 'post'
 type: 'post'
 ---
