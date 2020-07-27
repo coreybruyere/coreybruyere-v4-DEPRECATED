@@ -30,10 +30,6 @@ const IndexPage = ({
     .filter((edge: any) => edge.node.frontmatter.type === 'media') // Filter down to markdown files with a type of `media`.
     .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
 
-  {
-    console.log(edges.filter((edge: any) => edge.node.frontmatter.type === 'media'))
-  }
-
   return (
     <IndexLayout>
       <Page>
