@@ -18,15 +18,15 @@ const IndexPage = ({
     allMarkdownRemark: { edges }
   }
 }: IndexPageProps) => {
-  const Posts = edges
+  const posts = edges
     .filter((edge: any) => edge.node.frontmatter.type === 'post') // Filter down to markdown files with a type of `post`.
     .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
 
-  const Works = edges
+  const works = edges
     .filter((edge: any) => edge.node.frontmatter.type === 'work') // Filter down to markdown files with a type of `work`.
     .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
 
-  const Media = edges
+  const media = edges
     .filter((edge: any) => edge.node.frontmatter.type === 'media') // Filter down to markdown files with a type of `media`.
     .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
 
@@ -43,14 +43,14 @@ const IndexPage = ({
           <Link to="/page-2/">Go to page 2</Link>
 
           <h1>Blog posts</h1>
-          {Posts}
+          {posts}
 
           <h1>Work items</h1>
-          {Works}
+          {works}
 
           <h1>Media items</h1>
           <p>Decide on displaying current read or just a list</p>
-          {Media}
+          {media}
         </Container>
       </Page>
     </IndexLayout>

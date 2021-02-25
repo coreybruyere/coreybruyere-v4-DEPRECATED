@@ -2,8 +2,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-starter-typescript-plus',
-    titleTemplate: '%s · The Real Hero',
+    title: 'Corey Bruyere v4',
+    titleTemplate: 'coreybruyere-v4',
     description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
     url: 'https://www.coreybruyere.com', // No trailing slash allowed!
     image: '/images/snape.jpg',
@@ -11,9 +11,9 @@ module.exports = {
     twitterUsername: '@coreybruyere',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
     author: {
-      name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com'
+      name: 'Corey Bruyere',
+      url: 'https://www.coreybruyere.com',
+      email: 'hello@coreybruyere.com'
     }
   },
   plugins: [

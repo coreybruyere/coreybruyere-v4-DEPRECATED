@@ -3,8 +3,6 @@ import * as React from 'react'
 import { jsx, Box, Flex } from 'theme-ui'
 import { Link } from 'gatsby'
 
-import Container from './Container'
-
 interface HeaderProps {
   title: string
 }
