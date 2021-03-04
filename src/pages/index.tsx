@@ -33,25 +33,21 @@ const IndexPage = ({
   return (
     <IndexLayout>
       <Page>
-        <Container>
-          <Section heading={'Hi People'}>
-            <p>Welcome to your new Gatsby site.</p>
-            <p>Now go build something great.</p>
-          </Section>
-          <h1>Hi people</h1>
+        <Section heading={'Hi People'}>
+          <p>Welcome to your new Gatsby site.</p>
+          <p>Now go build something great.</p>
+        </Section>
+        <h1>Hi people</h1>
 
-          <Link to="/page-2/">Go to page 2</Link>
+        <Link to="/page-2/">Go to page 2</Link>
 
-          <h1>Blog posts</h1>
-          {posts}
+        <Section heading={<h1>Blog posts</h1>}>{posts}</Section>
 
-          <h1>Work items</h1>
-          {works}
+        <Section heading={<h1>Work items</h1>}>{works}</Section>
 
-          <h1>Media items</h1>
-          <p>Decide on displaying current read or just a list</p>
-          {media}
-        </Container>
+        <Section heading={<h1>Media items</h1>}>{media}</Section>
+
+        <p>Decide on displaying current read or just a list</p>
       </Page>
     </IndexLayout>
   )
