@@ -54,9 +54,6 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import 'modern-normalize'
-import '../styles/normalize'
-
 import Header from '../components/Header'
 import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
@@ -67,11 +64,12 @@ interface IndexLayoutProps extends SEOProps {}
 const IndexLayout: React.FC<IndexLayoutProps> = ({ children, title, description, image, article }) => {
   const { site } = useStaticQuery(query)
 
-  const { defaultTitle } = site.siteMetadata
+  const { defaultTitle, navLinks } = site.siteMetadata
+  console.log(navLinks)
   return (
     <LayoutRoot>
       <SEO title={title} description={description} image={image} article={article} />
-      <Header title={defaultTitle} />
+      <Header title={defaultTitle} navItems={navLinks} />
       <LayoutMain>{children}</LayoutMain>
     </LayoutRoot>
   )
@@ -84,6 +82,10 @@ const query = graphql`
     site {
       siteMetadata {
         defaultTitle: title
+        navLinks {
+          name
+          link
+        }
       }
     }
   }

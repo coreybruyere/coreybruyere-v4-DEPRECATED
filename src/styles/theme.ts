@@ -17,8 +17,8 @@ export default {
     heading: 1.125
   },
   colors: {
-    text: '#000',
-    background: '#fff',
+    text: '#171717', // light black
+    background: '#edf4f3', // light teal
     primary: '#07c',
     secondary: '#30c',
     muted: '#f6f6f6'

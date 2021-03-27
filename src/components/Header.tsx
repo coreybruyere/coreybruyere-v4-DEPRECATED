@@ -5,9 +5,13 @@ import { Link } from 'gatsby'
 
 interface HeaderProps {
   title: string
+  navItems?: {
+    name: string
+    link: string
+  }[]
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => (
+const Header: React.FC<HeaderProps> = ({ title, navItems }) => (
   <Box px={4} sx={{ backgroundColor: 'muted' }}>
     <Box
       p={4}
@@ -19,26 +23,52 @@ const Header: React.FC<HeaderProps> = ({ title }) => (
     >
       hi
     </Box>
-    <Flex
-      sx={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        height: '100%'
-      }}
-    >
-      <Link
-        activeClassName="active"
+    <Box as="nav">
+      <Flex
+        as="ul"
         sx={{
-          color: 'inherit',
-          '&.active': {
-            color: 'primary'
-          }
+          flexDirection: 'column',
+          alignItems: 'center',
+          height: '100%',
+          listStyle: 'none'
         }}
-        to="/"
       >
-        {title}
-      </Link>
-    </Flex>
+        <Box as="li">
+          <Link
+            activeClassName="active"
+            sx={{
+              color: 'primary',
+              '&.active': {
+                color: 'primary'
+              }
+            }}
+            to="/"
+          >
+            {title}
+          </Link>
+        </Box>
+        {navItems &&
+          navItems.map(({ name, link }) => {
+            console.log(name)
+            return (
+              <Box as="li" key={`${title}-${link}`}>
+                <Link
+                  activeClassName="active"
+                  sx={{
+                    color: 'primary',
+                    '&.active': {
+                      color: 'primary'
+                    }
+                  }}
+                  to={link}
+                >
+                  {name}
+                </Link>
+              </Box>
+            )
+          })}
+      </Flex>
+    </Box>
   </Box>
 )
 

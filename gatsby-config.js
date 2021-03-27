@@ -3,6 +3,20 @@
 module.exports = {
   siteMetadata: {
     title: 'Corey Bruyere v4',
+    navLinks: [
+      {
+        name: 'Home',
+        link: '/'
+      },
+      {
+        name: 'About',
+        link: '/about'
+      },
+      {
+        name: 'Uses',
+        link: '/uses'
+      }
+    ],
     titleTemplate: 'coreybruyere-v4',
     description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
     url: 'https://www.coreybruyere.com', // No trailing slash allowed!
