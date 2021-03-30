@@ -4,6 +4,7 @@ date: '2020-07-30'
 title: 'What is a UX Engineer?'
 layout: 'post'
 type: 'post'
+tags: ['development', 'musings']
 ---
 
 # What is a UX Engineer?

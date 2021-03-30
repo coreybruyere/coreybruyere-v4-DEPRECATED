@@ -22,6 +22,7 @@ interface PostTemplateProps {
       excerpt: string
       frontmatter: {
         title: string
+        tags: string[]
       }
     }
   }
@@ -33,6 +34,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => (
       <Container>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <h2>Post</h2>
+        {data.markdownRemark.frontmatter.tags && data.markdownRemark.frontmatter.tags.map(tag => <a href={`/tags/${tag}`}>{tag}</a>)}
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
@@ -59,6 +61,7 @@ export const query = graphql`
       excerpt
       frontmatter {
         title
+        tags
       }
     }
   }

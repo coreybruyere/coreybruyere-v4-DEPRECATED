@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const _ = require('lodash')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -41,17 +42,26 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  const tagTemplate = path.resolve('src/templates/tags.tsx')
 
   const allMarkdown = await graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      postsRemark: allMarkdownRemark(limit: 1000) {
         edges {
           node {
             fields {
               layout
               slug
             }
+            frontmatter {
+              tags
+            }
           }
+        }
+      }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
@@ -62,7 +72,21 @@ exports.createPages = async ({ graphql, actions }) => {
     throw new Error(allMarkdown.errors)
   }
 
-  allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  // Extract tag data from query
+  const tags = allMarkdown.data.tagsGroup.group
+
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue
+      }
+    })
+  })
+
+  allMarkdown.data.postsRemark.edges.forEach(({ node }) => {
     const { slug, layout } = node.fields
 
     createPage({
