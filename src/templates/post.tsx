@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+/** @jsx jsx */
+import { jsx, Link } from 'theme-ui'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -34,7 +36,12 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => (
       <Container>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <h2>Post</h2>
-        {data.markdownRemark.frontmatter.tags && data.markdownRemark.frontmatter.tags.map(tag => <a href={`/tags/${tag}`}>{tag}</a>)}
+        {data.markdownRemark.frontmatter.tags &&
+          data.markdownRemark.frontmatter.tags.map(tag => (
+            <Link px={2} href={`/tags/${tag}`}>
+              {tag}
+            </Link>
+          ))}
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
