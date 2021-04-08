@@ -11,6 +11,21 @@
 
 This is a starter kit for [Gatsby.js](https://www.gatsbyjs.org/) websites written in TypeScript. It includes the bare essentials for you to get started (styling, Markdown parsing, minimal toolset).
 
+## Corey Bruyere v4 to-do:
+
+- Design sections of site
+  - Hero / Page Title
+  - Home posts section
+  - Home works section
+  - Home media section
+  - Contact section that leads to form
+  - Nav
+- Contact page
+- About page (generic page)
+- Archive page for posts / works
+- tags page
+- uses page (generic page)
+
 ## 🗒️ Features
 
 - TypeScript
