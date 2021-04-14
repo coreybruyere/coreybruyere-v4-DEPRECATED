@@ -2,8 +2,9 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Page from '../components/Page'
-import Container from '../components/Container'
 import PostLink from '../components/PostLink'
+import MediaItem from '../components/MediaItem'
+
 import Section from '../components/Section'
 import IndexLayout from '../layouts'
 
@@ -26,9 +27,19 @@ const IndexPage = ({
     .filter((edge: any) => edge.node.frontmatter.type === 'work') // Filter down to markdown files with a type of `work`.
     .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
 
-  const media = edges
-    .filter((edge: any) => edge.node.frontmatter.type === 'media') // Filter down to markdown files with a type of `media`.
-    .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />)
+  // const media = edges
+  //   .filter((edge: any) => edge.node.frontmatter.type === 'media') // Filter down to markdown files with a type of `media`.
+  //   .map((edge: any) => <MediaItem key={edge.node.id} media={edge.node} />)
+
+  const media = edges.filter((edge: any) => edge.node.frontmatter.type === 'media') // Filter down to markdown files with a type of `media`.
+
+  // Grab the latest audiobook
+  const audiobook = media.filter((edge: any) => edge.node.frontmatter.format === 'audiobook')[0]
+
+  // Grab the latest book
+  const book = media.filter((edge: any) => edge.node.frontmatter.format === 'book')[0]
+
+  console.log(book.node.frontmatter.title)
 
   return (
     <IndexLayout>
@@ -45,7 +56,15 @@ const IndexPage = ({
 
         <Section heading={<h1>Work items</h1>}>{works}</Section>
 
-        <Section heading={<h1>Media items</h1>}>{media}</Section>
+        {/* <Section heading={<h1>Media items</h1>}>{media}</Section> */}
+
+        <Section heading={<h1>Digesting</h1>}>
+          <h2>Reading</h2>
+          <MediaItem media={book.node} />
+
+          <h2>Listening</h2>
+          <MediaItem media={audiobook.node} />
+        </Section>
 
         <p>Decide on displaying current read or just a list</p>
       </Page>
@@ -68,6 +87,7 @@ export const pageQuery = graphql`
             title
             type
             tags
+            format
           }
         }
       }
