@@ -1,5 +1,5 @@
 ---
-slug: '/media/my-first-book'
+link: 'https://www.audible.com/'
 date: '2019-05-04'
 title: 'My first book'
 layout: 'post'
