@@ -48,7 +48,21 @@ const IndexPage = ({
           <p>Welcome to your new Gatsby site.</p>
           <p>Now go build something great.</p>
         </Section>
-        <h1>Hi people</h1>
+        <h1>Site Map</h1>
+        <ul>
+          <li>
+            Home
+            <ul>
+              <li>Latest Posts</li>
+              <li>Selected Work</li>
+              <li>Media (Digesting)</li>
+            </ul>
+          </li>
+          <li>About</li>
+          <li>Uses</li>
+          <li>Posts (Paginated archive)</li>
+          <li>Work (Paginated archive)</li>
+        </ul>
 
         <Link to="/page-2/">Go to page 2</Link>
 
