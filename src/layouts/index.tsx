@@ -56,7 +56,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from '../components/Header'
 import LayoutRoot from '../components/LayoutRoot'
-import LayoutMain from '../components/LayoutMain'
+import Main from '../components/Main'
 import SEO, { SEOProps } from '../components/SEO'
 
 interface IndexLayoutProps extends SEOProps {}
@@ -70,7 +70,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ children, title, description,
     <LayoutRoot>
       <SEO title={title} description={description} image={image} article={article} />
       <Header title={defaultTitle} navItems={navLinks} />
-      <LayoutMain>{children}</LayoutMain>
+      <Main>{children}</Main>
     </LayoutRoot>
   )
 }

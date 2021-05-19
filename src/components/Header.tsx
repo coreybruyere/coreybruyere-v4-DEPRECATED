@@ -12,7 +12,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title, navItems }) => (
-  <Box px={4} sx={{ backgroundColor: 'muted' }}>
+  <Box px={4} sx={{ backgroundColor: 'muted' }} as="header" role="banner">
     <Box
       p={4}
       sx={{
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ title, navItems }) => (
         backgroundColor: 'primary'
       }}
     >
-      hi
+      Logo
     </Box>
     <Box as="nav">
       <Flex
