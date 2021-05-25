@@ -1,12 +1,11 @@
 import * as React from 'react'
-/** @jsx jsx */
-import { jsx, Flex } from 'theme-ui'
+import { Flex, FlexProps } from 'theme-ui'
 
-interface MainProps {
+interface MainProps extends FlexProps {
   className?: string
 }
 
-const Main: React.FC<MainProps> = ({ children, className }) => (
+const Main: React.FC<MainProps> = ({ children, className, ...other }) => (
   <Flex
     sx={{
       flexDirection: 'column',
@@ -14,6 +13,7 @@ const Main: React.FC<MainProps> = ({ children, className }) => (
     }}
     as={'main'}
     className={className}
+    {...other}
   >
     {children}
   </Flex>

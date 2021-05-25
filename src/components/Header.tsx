@@ -1,9 +1,8 @@
 import * as React from 'react'
-/** @jsx jsx */
-import { jsx, Box, Flex } from 'theme-ui'
+import { Box, BoxProps, Flex } from 'theme-ui'
 import { Link } from 'gatsby'
 
-interface HeaderProps {
+interface HeaderProps extends BoxProps {
   title: string
   navItems?: {
     name: string
@@ -11,8 +10,8 @@ interface HeaderProps {
   }[]
 }
 
-const Header: React.FC<HeaderProps> = ({ title, navItems }) => (
-  <Box px={4} sx={{ backgroundColor: 'muted' }} as="header" role="banner">
+const Header: React.FC<HeaderProps> = ({ title, navItems, ...other }) => (
+  <Box px={4} sx={{ backgroundColor: 'muted' }} as="header" role="banner" {...other}>
     <Box
       p={4}
       sx={{

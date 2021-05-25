@@ -1,8 +1,12 @@
 import * as React from 'react'
-import { Box } from 'theme-ui'
+import { Box, BoxProps } from 'theme-ui'
 
-const Container: React.FC = ({ children, ...other }) => (
-  <Box mx={'auto'} sx={{ width: 'auto', maxWidth: 900, position: 'relative' }} {...other}>
+interface ContainerProps extends BoxProps {
+  className?: string
+}
+
+const Container: React.FC<ContainerProps> = ({ children, className, ...other }) => (
+  <Box mx={'auto'} className={className} sx={{ width: 'auto', maxWidth: 900, position: 'relative' }} {...other}>
     {children}
   </Box>
 )

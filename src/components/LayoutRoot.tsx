@@ -7,7 +7,7 @@ interface LayoutRootProps extends FlexProps {
   className?: string
 }
 
-const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className }) => (
+const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, ...other }) => (
   <>
     <Global styles={() => css(emotionNormalize)} />
     <Flex
@@ -17,6 +17,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className }) => (
       }}
       className={className}
       role="document"
+      {...other}
     >
       {children}
     </Flex>
