@@ -30,6 +30,9 @@ export default {
       fontWeight: 'heading'
     }
   },
+  shadows: {
+    inset: ['inset 0 -2px 5px rgba(0,0,0,.33)']
+  },
   styles: {
     root: {
       fontFamily: 'body',

@@ -1,17 +1,22 @@
-import * as React from 'react'
-import styled from '@emotion/styled'
+import React from 'react'
+import { Box, BoxProps } from 'theme-ui'
 
-const StyledPage = styled.div`
-  display: block;
-  flex: 1;
-  position: relative;
-  margin-bottom: 3rem;
-`
-
-interface PageProps {
+interface PageProps extends BoxProps {
   className?: string
 }
 
-const Page: React.FC<PageProps> = ({ children, className }) => <StyledPage className={className}>{children}</StyledPage>
+const Page: React.FC<PageProps> = ({ children, className }) => (
+  <Box
+    sx={{
+      display: 'block',
+      flex: 1,
+      position: 'relative',
+      mb: 5
+    }}
+    className={className}
+  >
+    {children}
+  </Box>
+)
 
 export default Page

@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, Box, BoxProps, Flex } from 'theme-ui'
 import * as React from 'react'
-import { Box, BoxProps, Flex } from 'theme-ui'
 import { Link } from 'gatsby'
 
 interface HeaderProps extends BoxProps {
@@ -11,7 +12,12 @@ interface HeaderProps extends BoxProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title, navItems, ...other }) => (
-  <Box px={4} sx={{ backgroundColor: 'muted' }} as="header" role="banner" {...other}>
+  <Flex
+    as="header"
+    role="banner"
+    sx={{ px: 4, justifyContent: 'space-between', backgroundColor: 'muted', boxShadow: 'inset', ...other.sx }}
+  >
+    <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: -1, filter: 'blur(5px)' }}></Box>
     <Box
       p={4}
       sx={{
@@ -26,7 +32,6 @@ const Header: React.FC<HeaderProps> = ({ title, navItems, ...other }) => (
       <Flex
         as="ul"
         sx={{
-          flexDirection: 'column',
           alignItems: 'center',
           height: '100%',
           listStyle: 'none'
@@ -68,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ title, navItems, ...other }) => (
           })}
       </Flex>
     </Box>
-  </Box>
+  </Flex>
 )
 
 export default Header

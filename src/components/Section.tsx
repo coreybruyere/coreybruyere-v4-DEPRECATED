@@ -1,5 +1,4 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
 import { Box } from 'theme-ui'
 
 interface SectionProps {
@@ -7,14 +6,12 @@ interface SectionProps {
   subHeading?: React.ReactNode
 }
 
-const Wrap = styled(Box)``
-
 const Section: React.FC<SectionProps> = ({ children, heading, subHeading }) => (
-  <Wrap as="section">
+  <Box as="section">
     <div>{heading}</div>
     <div>{subHeading}</div>
     {children}
-  </Wrap>
+  </Box>
 )
 
 export default Section

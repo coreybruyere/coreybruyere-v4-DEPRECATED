@@ -69,7 +69,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ children, title, description,
   return (
     <LayoutRoot>
       <SEO title={title} description={description} image={image} article={article} />
-      <Header title={defaultTitle} navItems={navLinks} />
+      <Header title={defaultTitle} navItems={navLinks} sx={{ color: 'red' }} />
       <Main>{children}</Main>
     </LayoutRoot>
   )
