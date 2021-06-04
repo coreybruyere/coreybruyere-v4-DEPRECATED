@@ -51,6 +51,8 @@
 
 // TODO: Remove staticquery above and pass down props from SEO component from each page type
 
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 

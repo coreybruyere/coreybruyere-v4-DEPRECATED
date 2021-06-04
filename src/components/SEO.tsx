@@ -4,10 +4,10 @@ import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
 
 export interface SEOProps {
-  title?: string | null
-  description?: string | null
-  image?: string | null
-  article?: boolean
+  title?: string | null | undefined
+  description?: string | null | undefined
+  image?: string | null | undefined
+  article?: boolean | undefined
 }
 
 const SEO: React.FC<SEOProps> = ({ title, description, image, article }) => {

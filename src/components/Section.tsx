@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 import * as React from 'react'
-import { Box } from 'theme-ui'
 
 interface SectionProps {
   heading: React.ReactNode

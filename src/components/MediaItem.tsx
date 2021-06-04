@@ -1,6 +1,7 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Box, BoxProps } from 'theme-ui'
+import * as React from 'react'
 import { Link } from 'gatsby'
-import { Box, BoxProps } from 'theme-ui'
 
 interface MediaItemProps extends BoxProps {
   media: any

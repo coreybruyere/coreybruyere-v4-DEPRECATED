@@ -21,7 +21,13 @@ export default {
     background: '#edf4f3', // light teal
     primary: '#07c',
     secondary: '#30c',
-    muted: '#f6f6f6'
+    muted: '#f6f6f6',
+    modes: {
+      dark: {
+        text: '#edf4f3',
+        background: '#171717'
+      }
+    }
   },
   text: {
     heading: {

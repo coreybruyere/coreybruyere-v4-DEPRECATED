@@ -26,6 +26,15 @@ This is a starter kit for [Gatsby.js](https://www.gatsbyjs.org/) websites writte
 - tags page
 - uses page (generic page)
 
+## Development Notes
+
+- Any template or component that uses the `sx` prop needs a `jsx` fragment, like so:
+
+```
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+```
+
 ## 🗒️ Features
 
 - TypeScript

@@ -1,11 +1,10 @@
+/** @jsx jsx */
+import { jsx, Box, BoxProps } from 'theme-ui'
 import React from 'react'
-import { Box, BoxProps } from 'theme-ui'
 
-interface PageProps extends BoxProps {
-  className?: string
-}
+interface PageProps extends BoxProps {}
 
-const Page: React.FC<PageProps> = ({ children, className }) => (
+const Page: React.FC<PageProps> = ({ children }) => (
   <Box
     sx={{
       display: 'block',
@@ -13,7 +12,6 @@ const Page: React.FC<PageProps> = ({ children, className }) => (
       position: 'relative',
       mb: 5
     }}
-    className={className}
   >
     {children}
   </Box>

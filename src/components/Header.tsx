@@ -15,9 +15,9 @@ const Header: React.FC<HeaderProps> = ({ title, navItems, ...other }) => (
   <Flex
     as="header"
     role="banner"
-    sx={{ px: 4, justifyContent: 'space-between', backgroundColor: 'muted', boxShadow: 'inset', ...other.sx }}
+    sx={{ px: 4, justifyContent: 'space-between', backgroundColor: 'rgba(0,0,0,.15)', boxShadow: 'inset' }}
+    {...other}
   >
-    <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: -1, filter: 'blur(5px)' }}></Box>
     <Box
       p={4}
       sx={{
